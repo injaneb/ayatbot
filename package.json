@@ -1,7 +1,7 @@
 {
   "name": "ayat",
   "version": "1.0.0",
-  "description": "sends ayahs",
+  "description": "Twitter & Telegram bot that sends a random ayah from Quran every hour.",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
