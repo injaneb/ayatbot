@@ -2,12 +2,25 @@
   "name": "ayat",
   "version": "1.0.0",
   "description": "Twitter & Telegram bot that sends a random ayah from Quran every hour.",
+  "author": "Osama",
+  "license": "MIT",
+  "repository": "osamaify/ayat",
   "main": "app.js",
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
+  },
   "scripts": {
     "start": "node app.js"
   },
-  "author": "Osama",
-  "license": "MIT",
+  "keywords": [
+    "Ayat",
+    "Ayatbot",
+    "Quran",
+    "bot",
+    "Twitter",
+    "Telegram"
+  ],
   "dependencies": {
     "axios": "^0.19.0",
     "dotenv": "^8.2.0",
