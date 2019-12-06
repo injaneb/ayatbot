@@ -38,7 +38,7 @@ async function main() {
     if (!data || !data.text) {
       throw new Error(`empty data response, ayah number ${randAyah}`);
     } else if (data.text.length > 280) {
-      logger('error', 'more than 280 chars');
+      logger('error', `more than 280 chars (${data.text.length})`);
       return main();
     }
 
