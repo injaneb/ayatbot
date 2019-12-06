@@ -29,18 +29,24 @@ async function main() {
   logger('msg', `ayah's number: ${randAyah}`);
 
   try {
-    const res = await phin({
+    let res = await phin({
       url: `http://api.alquran.cloud/v1/ayah/${randAyah}/editions/quran-uthmani`,
       parse: 'json'
     });
 
-    const data = res.body.data[0];
-    if (!data || !data.text) throw new Error(`empty data response, ayah number ${randAyah}`);
+    let data = res.body.data[0];
+    if (!data || !data.text) {
+      throw new Error(`empty data response, ayah number ${randAyah}`);
+    } else if (data.text.length > 280) {
+      logger('error', 'more than 280 chars');
+      return main();
+    }
 
     twitter(data.text);
     telegram(data.text);
   } catch (err) {
     logger('error', err);
+    return main();
   }
 }
 
